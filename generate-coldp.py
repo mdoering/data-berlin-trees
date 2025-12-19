@@ -1,18 +1,26 @@
 # -*- coding: utf-8 -*-
 
-import csv, re, json
-from pyproj import CRS, Transformer
+import json
+from pyproj import Transformer
+from datetime import date
 
 files   = ['anlagenbaeume.json', 'strassenbaeume.json']
-outFile = 'occurrences.csv'
-crs = CRS.from_epsg(25833)
-wgs84 = CRS.from_epsg(4326)
+outFile = 'occurrence.tsv'
+
+current_year = date.today().year
+# coordinate transformer
 transformer = Transformer.from_crs("EPSG:25833", "EPSG:4326", always_xy=True)
 
-def writeRec(out, rec):
-    ID = rec["id"]
 
-    props=rec["properties"]
+def writeRec(out, rec):
+    props   = rec["properties"]
+    sn      = props["art_bot"]
+    if not sn or sn=='Unbekannt' or sn=='None':
+        return
+    ID = rec["id"]
+    yearStr = props["pflanzjahr"]
+    year = int(yearStr) if yearStr else 0
+
     vcoord = rec["geometry"]["coordinates"]
     vlon = vcoord[0]
     vlat = vcoord[1] 
@@ -22,12 +30,17 @@ def writeRec(out, rec):
     lon = coord[0]
     lat = coord[1]
     dp = "{\"age\":%s, \"trunk diameter\":%s, \"height\":%s, \"planting year\":%s}" % (props["standalter"], props["stammumfg"], props["baumhoehe"], props["pflanzjahr"])
-    out.write("\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\",\"%s\"\n" % (ID, props["art_bot"], props["kennzeich"], props["art_dtsch"], props["gattung"], props["bezirk"], props["namenr"], lat, lon, vlat, vlon, dp.replace('"', '\\"')))
+    # record for this year
+    out.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\t%s\n" % (ID, props["kennzeich"], sn, props["art_dtsch"], props["gattung"], props["bezirk"], props["namenr"], lat, lon, vlat, vlon, current_year, dp))
+    # do another record for the year it was planted
+    if year > 1800 and year < current_year:
+        out.write("%s.planted\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t\"Year the tree was planted\"\t\n" % (ID, props["kennzeich"], sn, props["art_dtsch"], props["gattung"], props["bezirk"], props["namenr"], lat, lon, vlat, vlon, year))
+
 
 
 
 with open(outFile, 'w', newline='') as out:
-    out.write("occurrenceID,scientificName,vernacularName,genus,municipality,locality,decimalLatitude,decimalLongitude,verbatimLatitude,verbatimLongitude,dynamicProperties\n")
+    out.write("occurrenceID\tcatalogNumber\tscientificName\tvernacularName\tgenus\tmunicipality\tlocality\tdecimalLatitude\tdecimalLongitude\tverbatimLatitude\tverbatimLongitude\tyear\toccurrenceRemarks\tdynamicProperties\n")
     for fn in files:
         print("Process file "+fn)
         with open(fn) as f:
