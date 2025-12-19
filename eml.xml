@@ -1,0 +1,123 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:dc="http://purl.org/dc/terms/"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd"
+         packageId="https://ipt.gbif.org/resource?id=zeigerwerte/v1.0" system="http://gbif.org" scope="system"
+         xml:lang="eng">
+
+<dataset>
+  <title xml:lang="deu">Straßen- und Anlagenbaumbestand Berlin</title>
+  <creator>
+    <organizationName>Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt Berlin</organizationName>
+    <address>
+      <deliveryPoint>Württembergische Straße 6</deliveryPoint>
+      <city>Berlin</city>
+      <postalCode>10707</postalCode>
+      <country>GERMANY</country>
+    </address>
+    <electronicMailAddress>kommunikation@senstadtum.berlin.de</electronicMailAddress>
+    <onlineUrl>https://www.berlin.de/sen/uvk/</onlineUrl>
+  </creator>
+  <metadataProvider>
+    <individualName>
+      <givenName>Markus</givenName>
+      <surName>Döring</surName>
+    </individualName>
+    <organizationName>GBIF</organizationName>
+    <address>
+        <city>Berlin</city>
+        <postalCode>12589</postalCode>
+        <country>DE</country>
+    </address>
+    <electronicMailAddress>mdoering@gbif.org</electronicMailAddress>
+    <userId directory="http://orcid.org/">0000-0001-7757-1889</userId>
+  </metadataProvider>
+  <pubDate>2025-12-19</pubDate>
+  <language>deu</language>
+  <abstract>
+    <para>
+Straßen- und Anlagenbaumbestand Berlins im Geoportal auf Grundlage des
+Baumkataster des Berliner Grünflächeninformations- und managementsystems
+(GRIS), in dem die Bäume und Grünflächen verwaltet werden, die sich in der
+Zuständigkeit der bezirklichen Straßen- und Grünflächenämter befinden. Im
+Baumkataster Berlin sind über 900.000 aktive Bäume mit ihren Daten erfasst.
+Bei den Straßenbäumen handelt es sich um Bäume, die gemäß § 2 Abs. 2 Nr. 3
+Berliner Straßengesetz (BerlStrG) als Zubehör der Straße gelten und somit zum
+öffentlich gewidmeten Straßenland gehören. Bäume in Privatstraßen werden nicht im
+GRIS Berlin erfasst/verwaltet.
+    </para>
+    <para>
+Anlagenbäume sind Bäume in öffentlichen Grün- und Erholungsanlagen, die nach dem
+Grünanlagengesetz gewidmet sind und von den bezirklichen Straßen- und
+Grünflächenämtern unterhalten werden, sowie teilweise auch Bäume im Bereich
+anderer öffentlicher Einrichtungen, wie z.B. auf Schulhöfen oder in Kindertagesstätten.
+Zu beachten ist, dass Bäume in den öffentlichen Grünanlagen in der Regel nur dann
+als Einzelbaum im Kataster erfasst sind, wenn diese aus Gründen der
+Verkehrssicherungspflicht bzw. der Pflege regelmäßig individuell kontrolliert werden
+müssen.
+    </para>
+    <para>
+Bäume auf privaten Flächen sind im GRIS Berlin nicht erfasst. Als private Flächen
+zählen auch die von den Berliner Wohnungsbaugesellschaften verwalteten
+umfangreichen Grünflächen. Ebenso enthält das Kataster in der Regel keine Bäume
+auf Friedhöfen, Sportanlagen, in Freibädern und in Waldflächen im Sinne des
+Landeswaldgesetzes. Auch Bäume von in anderer Zuständigkeit liegenden Berliner
+Grün-, Erholungs- und Freizeitanlagen werden im GRIS nicht geführt. Hierzu zählen
+auch einige bedeutende Berliner Parkanlagen wie der Schlosspark Charlottenburg
+(verwaltet von der Stiftung Preußische Schlösser und Gärten Berlin-Brandenburg), der
+Zoo und der Tierpark Berlin sowie der Britzer Garten und die Gärten der Welt (beide
+verwaltet von der Grün Berlin GmbH). Dies betrifft auch bestimmte Bäume an
+Wasserstraßen und Kanälen in der Zuständigkeit des Wasserstraßen- und
+Schifffahrtsamtes.      
+    </para>
+  </abstract>
+      <keywordSet>
+          <keyword>tree</keyword>
+          <keyword>berlin</keyword>
+          <keyword>germany</keyword>
+      </keywordSet>
+  <intellectualRights>
+    <para>To the extent possible under law, the publisher has waived all rights to these data and has dedicated them to the <ulink url="http://creativecommons.org/publicdomain/zero/1.0/legalcode"><citetitle>Public Domain (CC0 1.0)</citetitle></ulink>. Users may copy, modify, distribute and use the work, including for commercial purposes, without restriction.</para>
+  </intellectualRights>
+  <licensed>
+    <licenseName>Deutschland - Zero - Version 2.0</licenseName>
+    <url>https://www.govdata.de/dl-de/zero-2-0</url>
+    <identifier>dl-zero-de/2.0</identifier>
+  </licensed>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Berlin, Germany</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-5.273</westBoundingCoordinate>
+          <eastBoundingCoordinate>24.258</eastBoundingCoordinate>
+          <northBoundingCoordinate>58.263</northBoundingCoordinate>
+          <southBoundingCoordinate>43.069</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+          <taxonomicCoverage>
+              <taxonomicClassification>
+                  <taxonRankName>kingdom</taxonRankName>
+                <taxonRankValue>Plantae</taxonRankValue>
+              </taxonomicClassification>
+          </taxonomicCoverage>
+  </coverage>
+  <distribution scope="document">
+    <online><url function="information">https://www.berlin.de/sen/uvk/natur-und-gruen/stadtgruen/stadtbaeume/strassen-und-parkbaeume/</url></online>
+  </distribution>  
+  <distribution scope="document">
+    <online><url function="download">https://gdi.berlin.de/geonetwork/srv/ger/catalog.search#/metadata/3368004a-d596-336a-8fdf-c4391f3313dd</url></online>
+  </distribution>  
+  <contact>
+    <individualName>
+      <givenName>Björn</givenName>
+      <surName>Dejoks</surName>
+    </individualName>
+    <organizationName>Senatsverwaltung für Mobilität, Verkehr, Klimaschutz und Umwelt Berlin</organizationName>
+    <address>
+        <city>Berlin</city>
+        <country>DE</country>
+    </address>
+    <electronicMailAddress>bjoern.dejoks@senmvku.berlin.de</electronicMailAddress>
+  </contact>
+</dataset>
+</eml:eml>
