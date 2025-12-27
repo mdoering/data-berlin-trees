@@ -24,6 +24,6 @@
     <field term="http://rs.tdwg.org/dwc/terms/county" default="Berlin"/>
     <field term="http://rs.tdwg.org/dwc/terms/basisOfRecord" default="LivingSpecimen"/>
     <field term="http://rs.tdwg.org/dwc/terms/verbatimSRS" default="EPSG:25833"/>
-    <field term="http://purl.org/dc/elements/1.1/language" default="de"/>
+    <field term="http://rs.tdwg.org/dwc/terms/geodeticDatum" default="EPSG:4326"/>
   </core>
 </archive>
